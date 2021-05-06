@@ -85,15 +85,12 @@ class JournalEntry extends HTMLElement {
        * 2. set the image src and alt attributes
        * 3. append the image element to the appropriate location in this component
        */
-        entryImage.src = entry.image.src;
-        entryImage.className = "entry-image";
-        this.shadowRoot.querySelector(".entry").appendChild(entryImage);
+        
       // CODE GOES HERE vvv
-
-
-
-
-
+      entryImage.src = entry.image.src;
+      entryImage.className = "entry-image";
+      entryImage.alt = entry.image.alt;
+      this.shadowRoot.querySelector(".entry").appendChild(entryImage);
       // CODE GOES HERE ^^^
 
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
@@ -106,7 +103,7 @@ class JournalEntry extends HTMLElement {
 
     }
     if (entry.audio) {
-      let entryAudio;
+      let entryAudio = document.createElement('audio');
       /*
        * TODO: if the entry contains an audio resource,
        * 1. create an audio element with the correct class
@@ -115,8 +112,10 @@ class JournalEntry extends HTMLElement {
        */
 
       // CODE GOES HERE vvv
-
-
+      entryAudio.src = entry.audio;
+      entryAudio.className = "entry-audio";
+      entryAudio.controls = true;
+      this.shadowRoot.querySelector(".entry").appendChild(entryAudio);
 
 
 
