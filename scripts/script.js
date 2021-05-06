@@ -23,18 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(entries => {
       entries.forEach((entry) => {
        
-        let newPost;  
+        let newPost = document.createElement('journal-entry');  
 
 
         // CODE GOES HERE vvv
-        
-
-
-
-
-
-
-
+        newPost.entry = entry;
+        document.querySelector('main').appendChild(newPost);
         // CODE GOES HERE ^^^
 
 
