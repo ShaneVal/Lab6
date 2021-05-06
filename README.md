@@ -4,5 +4,5 @@
 - Shane Valderrama
 - Prashanth Rajan
 
-LINK TO YOUR PART 2 REPOSITORY
+LINK TO REPOSITORY
 
