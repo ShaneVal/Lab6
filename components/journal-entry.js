@@ -71,8 +71,6 @@ class JournalEntry extends HTMLElement {
     /* 
      * TODO: set the entry title, date, and content fields in this component
      */
-    //this.title = entry.title;
-    //this.date = entry.date;
     this.shadowRoot.querySelector(".entry-title").innerHTML = entry.title;
     this.shadowRoot.querySelector(".entry-date").innerHTML = entry.date;
     this.shadowRoot.querySelector(".entry-content").innerHTML = entry.content;
@@ -80,14 +78,16 @@ class JournalEntry extends HTMLElement {
     
 
     if (entry.image) {
-      let entryImage;
+      let entryImage = document.createElement('img');
       /*
        * TODO: if the entry contains an image resource,
        * 1. create an image element with the correct class
        * 2. set the image src and alt attributes
        * 3. append the image element to the appropriate location in this component
        */
-
+        entryImage.src = entry.image.src;
+        entryImage.className = "entry-image";
+        this.shadowRoot.appendChild(entryImage);
       // CODE GOES HERE vvv
 
 
