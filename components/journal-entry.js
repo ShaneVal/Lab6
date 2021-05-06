@@ -87,7 +87,7 @@ class JournalEntry extends HTMLElement {
        */
         entryImage.src = entry.image.src;
         entryImage.className = "entry-image";
-        this.shadowRoot.appendChild(entryImage);
+        this.shadowRoot.querySelector(".entry").appendChild(entryImage);
       // CODE GOES HERE vvv
 
 
