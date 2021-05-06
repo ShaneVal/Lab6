@@ -71,24 +71,26 @@ class JournalEntry extends HTMLElement {
     /* 
      * TODO: set the entry title, date, and content fields in this component
      */
+    this.shadowRoot.querySelector(".entry-title").innerHTML = entry.title;
+    this.shadowRoot.querySelector(".entry-date").innerHTML = entry.date;
+    this.shadowRoot.querySelector(".entry-content").innerHTML = entry.content;
+
     
-    // CODE GOES HERE
 
     if (entry.image) {
-      let entryImage;
+      let entryImage = document.createElement('img');
       /*
        * TODO: if the entry contains an image resource,
        * 1. create an image element with the correct class
        * 2. set the image src and alt attributes
        * 3. append the image element to the appropriate location in this component
        */
-
+        
       // CODE GOES HERE vvv
-
-
-
-
-
+      entryImage.src = entry.image.src;
+      entryImage.className = "entry-image";
+      entryImage.alt = entry.image.alt;
+      this.shadowRoot.querySelector(".entry").appendChild(entryImage);
       // CODE GOES HERE ^^^
 
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
@@ -101,7 +103,7 @@ class JournalEntry extends HTMLElement {
 
     }
     if (entry.audio) {
-      let entryAudio;
+      let entryAudio = document.createElement('audio');
       /*
        * TODO: if the entry contains an audio resource,
        * 1. create an audio element with the correct class
@@ -110,15 +112,12 @@ class JournalEntry extends HTMLElement {
        */
 
       // CODE GOES HERE vvv
-
-
-
-
-
-
+      entryAudio.src = entry.audio;
+      entryAudio.className = "entry-audio";
+      entryAudio.controls = true;
+      this.shadowRoot.querySelector(".entry").appendChild(entryAudio);
       // CODE GOES HERE ^^^
       
-
       
       /* ------------- do not edit this code, it is for your debugging purposes ------------- */
       try {
