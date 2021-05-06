@@ -71,8 +71,13 @@ class JournalEntry extends HTMLElement {
     /* 
      * TODO: set the entry title, date, and content fields in this component
      */
+    //this.title = entry.title;
+    //this.date = entry.date;
+    this.shadowRoot.querySelector(".entry-title").innerHTML = entry.title;
+    this.shadowRoot.querySelector(".entry-date").innerHTML = entry.date;
+    this.shadowRoot.querySelector(".entry-content").innerHTML = entry.content;
+
     
-    // CODE GOES HERE
 
     if (entry.image) {
       let entryImage;
